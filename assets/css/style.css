@@ -1,0 +1,10 @@
+body{
+    background-color: #121721;
+}
+
+.nuxt-bg{
+    background-image: url(../../static/bgo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
