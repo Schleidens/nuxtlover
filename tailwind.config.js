@@ -1,4 +1,9 @@
 module.exports = {
+  future: {
+    // removeDeprecatedGapUtilities: true,
+    // purgeLayersByDefault: true,
+  },
+  purge: [],
   theme: {
     screens: {
       xs: '475px',
@@ -10,14 +15,8 @@ module.exports = {
       lg: '1024px',
 
       lx: '1280px'
-    },
-    colors: {
-      nuxt: '#00c58e'
-    },
-    backgroundColor: theme => ({
-      ...theme('colors'),
-      nuxt: '#011b31',
-      secondary: 'fff'
-    })
-  }
+    }
+  },
+  variants: {},
+  plugins: []
 }
