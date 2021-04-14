@@ -15,6 +15,12 @@ module.exports = {
       lg: '1024px',
 
       lx: '1280px'
+    },
+    colors: {
+      bg: ' #121721',
+      articles: '#19202d',
+      nuxt: '#00c58e',
+      nuxtsecondary: '#11DCA3'
     }
   },
   variants: {},
