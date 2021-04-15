@@ -1,9 +1,12 @@
 <template>
   <div class="px-5 py-8 mx-auto nuxt-bg">
-    <div class="flex flex-col text-center mb-20">
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-white">
-        Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.
+    <div class="flex flex-col text-center mb-4">
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-gray-200 text-xl">
+        <slot />
       </p>
+      <div class="search sm:px-16 px-4 flex">
+        <slot name="search" />
+      </div>
     </div>
   </div>
 </template>
@@ -15,5 +18,8 @@ export default {
 </script>
 
 <style scoped>
+.search{
+  transform: translateY(64px);
+}
 
 </style>
