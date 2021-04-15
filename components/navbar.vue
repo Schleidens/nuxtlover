@@ -4,7 +4,7 @@
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         <span class="ml-3 text-xl text-white font-bold">NuxtLover</span>
       </a>
-      <nav class="md:ml-auto hidden md:flex flex-wrap items-center text-base justify-center menu">
+      <nav class="md:ml-auto hidden md:flex flex-wrap items-center text-base justify-center text-white">
         <a class="mr-5 menu--list">First Link</a>
         <a class="mr-5 menu--list">Second Link</a>
         <a class="mr-5 menu--list">Fourth Link</a>
@@ -43,10 +43,6 @@ export default {
 </script>
 
 <style scoped>
-.text-white{
-  color: white;
-}
-
 .bar{
   border: 1px solid white;
   background-color: white;
@@ -95,10 +91,6 @@ export default {
 
 .menu--list:hover{
   color: #93ebd2;
-}
-
-.menu{
-  color: white;
 }
 
 .main-menu{
