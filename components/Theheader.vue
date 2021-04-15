@@ -4,7 +4,7 @@
       <p class="lg:w-2/3 mx-auto leading-relaxed text-gray-200 text-xl">
         <slot />
       </p>
-      <div class="search sm:px-16 px-4 flex">
+      <div class="search sm:px-16 px-4 flex z-0">
         <slot name="search" />
       </div>
     </div>

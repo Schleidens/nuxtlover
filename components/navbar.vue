@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 left-0 main-menu">
+  <header class="sticky top-0 left-0 main-menu z-50">
     <div class="container flex flex-wrap p-4 md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         <span class="ml-3 text-xl text-white font-bold">NuxtLover</span>
