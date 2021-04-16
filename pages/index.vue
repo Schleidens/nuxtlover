@@ -1,7 +1,9 @@
 <template>
   <div>
+    <!-- header sec -->
     <Theheader>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae inventore repellendus praesentium dolores minus, accusantium, necessitatibus autem quia sit voluptatum molestiae eveniet qui veritatis nemo eligendi sapiente alias ipsum rerum.
+      <!-- search bar -->
       <template #search>
         <input
           id="search"
@@ -10,30 +12,38 @@
           placeholder="Search by title"
           autocomplete="off"
           class="w-full h-16 shadow-lg bg-gray-900 rounded border border-gray-900 focus:shadow-2xl focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-          @focus="makesearch"
-          @focusout="makesearch(); reset()"
         >
       </template>
+      <!-- end -->
     </Theheader>
+    <!-- end -->
 
-    <ul :v-if="result.length" class="mt-6 shadow-lg rounded text-gray-400 sm:px-16 px-4">
-      <li v-for="results of result" :key="results.slug">
-        <div class="p-4 background-articles">
+    <!-- search result -->
+    <template v-if="result.length">
+      <ul class="border border-gray-800 mt-6 shadow-lg rounded bg-gray-900 text-gray-400 sm:mx-16 mx-4 mt-10 mb-10 py-1 pl-2">
+        <span class="mb-4">
+          <button class="cancel font-extrabold text-2xl" @click="reset">
+            X
+          </button>
+        </span>
+        <li v-for="results of result" :key="results.slug" class="px-4">
           <div class="h-full items-center sm:justify-start text-justify sm:text-left">
             <h2 class="title-font font-medium text-lg text-white text-xl">
-              <a href="https://google.com">
+              <nuxt-link :to="results.slug">
                 {{ results.title }}
-              </a>
+              </nuxt-link>
             </h2>
             <p class="mb-4 text-gray-400 text-base">
               {{ results.description }}
             </p>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </template>
+    <!-- end -->
 
-    <div v-if="nosearch">
+    <!-- blog post -->
+    <template v-else>
       <blogArticles v-for="blog in blogs" :key="blog.id" class="content">
         <template #img>
           <nuxt-link :to="blog.slug">
@@ -54,7 +64,8 @@
           </div>
         </template>
       </blogArticles>
-    </div>
+    </template>
+    <!-- end -->
   </div>
 </template>
 
@@ -93,9 +104,6 @@ export default {
     }
   },
   methods: {
-    makesearch () {
-      this.nosearch = !this.nosearch
-    },
     reset () {
       this.query = ''
     }
