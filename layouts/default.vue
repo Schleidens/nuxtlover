@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <main>
     <navbar />
     <Nuxt />
-  </div>
+    <Thefooter class="w-full pin-b bottom-0" />
+  </main>
 </template>
 
 <style>
