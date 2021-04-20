@@ -12,10 +12,10 @@
         <nuxt-link class="mr-5 menu--list" to="/projects">
           Projects
         </nuxt-link>
-        <nuxt-link class="mr-5 menu--list" to="/videos">
+        <nuxt-link class="mr-5 menu--list" to="/">
           Video
         </nuxt-link>
-        <nuxt-link class="mr-5 menu--list" to="/about">
+        <nuxt-link class="mr-5 menu--list" to="/">
           About
         </nuxt-link>
         <nuxt-link class="mr-5 menu--list" to="https://github.com/Schleidens/nuxtlover">
@@ -33,10 +33,10 @@
         <nuxt-link to="/projects" class="block px-4 menu--list" @click="toogle">
           Projects
         </nuxt-link>
-        <nuxt-link to="/videos" class="block px-4 menu--list" @click="toogle">
+        <nuxt-link to="/" class="block px-4 menu--list" @click="toogle">
           Video
         </nuxt-link>
-        <nuxt-link to="/about" class="block px-4 menu--list" @click="toogle">
+        <nuxt-link to="/" class="block px-4 menu--list" @click="toogle">
           About
         </nuxt-link>
         <nuxt-link to="https://github.com/Schleidens/nuxtlover" class="block px-4 menu--list" @click="toogle">
