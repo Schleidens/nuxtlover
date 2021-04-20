@@ -1,14 +1,26 @@
 <template>
   <header class="sticky top-0 left-0 main-menu z-50">
-    <div class="container flex flex-wrap p-4 md:flex-row items-center">
+    <div class="container flex flex-wrap p-2 sm:p-4 sm:pb-0 sm:pb-6 md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-        <span class="ml-3 text-xl text-white font-bold">NuxtLover</span>
+        <span class="ml-3 text-xl text-white font-bold">
+          <nuxt-link to="/">
+            <img src="../assets/img/logo.png" alt="NuxtLover" class="h-8 w-full">
+          </nuxt-link>
+        </span>
       </a>
-      <nav class="md:ml-auto hidden md:flex flex-wrap items-center text-base justify-center text-white">
-        <a class="mr-5 menu--list">First Link</a>
-        <a class="mr-5 menu--list">Second Link</a>
-        <a class="mr-5 menu--list">Fourth Link</a>
-        <a class="mr-5 menu--list">Third Link</a>
+      <nav class="md:ml-auto mc hidden md:flex flex-wrap items-center text-base justify-center text-white uppercase">
+        <nuxt-link class="mr-5 menu--list" to="/projects">
+          Projects
+        </nuxt-link>
+        <nuxt-link class="mr-5 menu--list" to="/videos">
+          Video
+        </nuxt-link>
+        <nuxt-link class="mr-5 menu--list" to="/about">
+          About
+        </nuxt-link>
+        <nuxt-link class="mr-5 menu--list" to="https://github.com/Schleidens/nuxtlover">
+          github
+        </nuxt-link>
       </nav>
       <button class="mobile-btn outline-none focus-none md:hidden focus:outline-none" @click="toogle">
         <div class="bar" />
@@ -16,11 +28,20 @@
         <div class="bar" />
       </button>
     </div>
-    <div class="mobile-nav" :class="show ? 'visible' : ''">
-      <div class="py-1" role="none">
-        <a href="#" class="block px-4 menu--list" @click="toogle">Account settings</a>
-        <a href="#" class="block px-4 menu--list" @click="toogle">Support</a>
-        <a href="#" class="block px-4 menu--list" @click="toogle">License</a>
+    <div class="mobile-nav uppercase" :class="show ? 'visible' : ''">
+      <div class="py-4 px-1" role="none">
+        <nuxt-link to="/projects" class="block px-4 menu--list" @click="toogle">
+          Projects
+        </nuxt-link>
+        <nuxt-link to="/videos" class="block px-4 menu--list" @click="toogle">
+          Video
+        </nuxt-link>
+        <nuxt-link to="/about" class="block px-4 menu--list" @click="toogle">
+          About
+        </nuxt-link>
+        <nuxt-link to="https://github.com/Schleidens/nuxtlover" class="block px-4 menu--list" @click="toogle">
+          github
+        </nuxt-link>
       </div>
     </div>
   </header>
@@ -51,6 +72,10 @@ export default {
 
   margin: 5px;
   width: 30px;
+}
+
+.mc{
+  margin-top: 7px;
 }
 
 .bar:nth-child(1){
