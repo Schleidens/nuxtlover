@@ -62,6 +62,10 @@
               #{{ tag }}
             </span>
           </div>
+          &bull;
+          <span class="ml-3">
+            {{ blog.createdAt | formatDate }}
+          </span>
         </template>
       </blogArticles>
     </template>
@@ -70,10 +74,16 @@
 </template>
 
 <script>
+import { format } from 'date-fns'
 import blogArticles from '~/components/blogArticles.vue'
 
 export default {
   components: { blogArticles },
+  filters: {
+    formatDate () {
+      return format(new Date(), 'dd-MM-yyyy')
+    }
+  },
   async asyncData ({ $content, params }) {
     const blogs = await $content('blog', params.slug).fetch()
 
@@ -86,6 +96,42 @@ export default {
       query: '',
       result: [],
       nosearch: true
+    }
+  },
+  head () {
+    const title = 'NuxtLover | Blog'
+    const description = 'Awesome blog build by NuxtLover for Nuxters'
+    return {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: description
+        },
+        // Open Graph
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description
+        },
+        // Twitter Card
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description
+        }
+      ]
     }
   },
   watch: {
@@ -112,7 +158,4 @@ export default {
 </script>
 
 <style scoped>
-.haut{
-  height: 5000px;
-}
 </style>
