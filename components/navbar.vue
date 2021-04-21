@@ -18,9 +18,9 @@
         <nuxt-link class="mr-5 menu--list" to="/">
           About
         </nuxt-link>
-        <nuxt-link class="mr-5 menu--list" to="https://github.com/Schleidens/nuxtlover">
+        <a class="mr-5 menu--list" href="https://github.com/Schleidens/nuxtlover">
           github
-        </nuxt-link>
+        </a>
       </nav>
       <button class="mobile-btn outline-none focus-none md:hidden focus:outline-none" @click="toogle">
         <div class="bar" />
@@ -39,9 +39,9 @@
         <nuxt-link to="/" class="block px-4 menu--list" @click="toogle">
           About
         </nuxt-link>
-        <nuxt-link to="https://github.com/Schleidens/nuxtlover" class="block px-4 menu--list" @click="toogle">
+        <a href="https://github.com/Schleidens/nuxtlover" class="block px-4 menu--list" @click="toogle">
           github
-        </nuxt-link>
+        </a>
       </div>
     </div>
   </header>
